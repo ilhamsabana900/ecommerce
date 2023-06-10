@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin EcommerceSingle</title>
+  <title>
+
+    @yield('page-title')
+  </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -210,7 +213,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('admindashboard') }}" class="nav-link active">
+            <a href="{{ route('admindashboard') }}" class="nav-link {{ Request::is('admin/dashboard') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -220,7 +223,7 @@
       
           <li class="nav-header">CATEGORY</li>
           <li class="nav-item">
-            <a href="{{ route('addcategory') }}" class="nav-link">
+            <a href="{{ route('addcategory') }}" class="nav-link {{ Request::is('admin/add-category') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Add Category
@@ -229,7 +232,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('allcategory') }}" class="nav-link">
+            <a href="{{ route('allcategory') }}" class="nav-link {{ Request::is('admin/all-category') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 All Category
@@ -239,7 +242,7 @@
       
           <li class="nav-header">SUB CATEGORY</li>
           <li class="nav-item">
-            <a href="{{ route('addsubcategory') }}" class="nav-link">
+            <a href="{{ route('addsubcategory') }}" class="nav-link {{ Request::is('admin/add-subcategory') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Add Sub Category
@@ -248,7 +251,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('allsubcategory') }}" class="nav-link">
+            <a href="{{ route('allsubcategory') }}" class="nav-link {{ Request::is('admin/all-subcategory') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 All Sub Category
@@ -258,17 +261,15 @@
       
           <li class="nav-header">PRODUCT</li>
           <li class="nav-item">
-            <a href="{{ route('addproduct') }}" class="nav-link">
+            <a href="{{ route('addproduct') }}" class="nav-link {{ Request::is('admin/add-product') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Add Product
               </p>
             </a>
           </li>
-            
-
           <li class="nav-item">
-            <a href="{{ route('allproduct') }}" class="nav-link">
+            <a href="{{ route('allproduct') }}" class="nav-link {{ Request::is('admin/all-product') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 All Product
@@ -278,33 +279,14 @@
       
           <li class="nav-header">ORDERS</li>
           <li class="nav-item">
-            <a href="{{ route('pandingorder') }}" class="nav-link">
+            <a href="{{ route('pandingorder') }}" class="nav-link {{ Request::is('admin/panding-order') ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Panding Orders
+                All Product
               </p>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Complite Orders
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Cancel Orders
-              </p>
-            </a>
-          </li>
-      
-
+    
       </nav>
       <!-- /.sidebar-menu -->
     </div>

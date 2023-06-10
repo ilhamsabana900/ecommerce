@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/all-product',[ProductController::class, 'Index'])->name('allproduct');
     Route::get('/admin/add-product',[ProductController::class, 'AddProduct'])->name('addproduct');
    
-    Route::get('/admin/panding-order',[OrderController::class, 'PandingOrder'])->name('pandingorder');
+    Route::get('/admin/panding-order',[OrderController::class, 'Index'])->name('pandingorder');
  
 
 });
