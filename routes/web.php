@@ -41,9 +41,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/all-category',[CategoryController::class, 'Index'])->name('allcategory');
     Route::get('/admin/add-category',[CategoryController::class, 'AddCategory'])->name('addcategory');
-   
+    Route::post('admin/store-category',[CategoryController::class, 'StoreCategory'])->name('storecategory');
+
     Route::get('/admin/all-subcategory',[SubCategoryController::class, 'Index'])->name('allsubcategory');
     Route::get('/admin/add-subcategory',[SubCategoryController::class, 'AddSubCategory'])->name('addsubcategory');
+  
    
     Route::get('/admin/all-product',[ProductController::class, 'Index'])->name('allproduct');
     Route::get('/admin/add-product',[ProductController::class, 'AddProduct'])->name('addproduct');

@@ -9,6 +9,7 @@
               <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Semua Category</h3>
+                
   
                   <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -22,6 +23,11 @@
                     </div>
                   </div>
                 </div>
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                  {{ session()->get('message') }}
+                </div>
+            @endif
                 <!-- /.card-header -->
                 <div class="card-body table-responsive p-0" style="0">
                   <table class="table">
